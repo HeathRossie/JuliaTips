@@ -19,7 +19,7 @@ files = Glob.glob("*.csv")
 # the varible is a name list of csv files
 
 # R equivalent to lapply(files, read.csv) %>% do.call(rbind,.)
-CSV.read.(files) |> (y -> reduce(vcat, y)) |> print
+df = CSV.read.(files) |> (y -> reduce(vcat, y)) 
 print(df)
 
 # if we need an index column which represents each csv file
